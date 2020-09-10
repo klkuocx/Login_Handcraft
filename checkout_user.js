@@ -1,4 +1,4 @@
-function checkoutUser(client) {
+function checkoutUser(account) {
   // Define users data
   const users = [
     {
@@ -28,8 +28,8 @@ function checkoutUser(client) {
     }
   ]
 
-  // Checkout client
-  const result = users.find(user => user.email === client.email && user.password === client.password)
+  // Checkout account
+  const result = users.find(user => user.email === account.email && user.password === account.password)
 
   // Define response
   const response = {

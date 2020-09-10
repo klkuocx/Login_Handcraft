@@ -7,14 +7,15 @@
       </h3>
       <form action="/login" method="POST" class="was-validated">
         <div class="form-group">
-          <label for="email">Email address</label>
+          <label for="email">Username</label>
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
                 <i class="fas fa-envelope"></i>
               </span>
             </div>
-            <input type="email" class="form-control rounded-right" id="email" name="email" required>
+            <input type="email" class="form-control rounded-right" id="email" name="email" value="{{account.email}}"
+              required>
             <div class="invalid-feedback">
               Please type your email.
             </div>
@@ -34,6 +35,13 @@
             </div>
           </div>
         </div>
+
+        {{#if account}}
+        <div class="alert alert-danger" role="alert">
+          <span class="mr-2">incorrect username or password</span>
+        </div>
+        {{/if}}
+
         <button type="submit" class="btn btn-primary  btn-block">Sign in</button>
       </form>
     </div>
